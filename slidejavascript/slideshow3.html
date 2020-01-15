@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Slideshow Demo</title>
+</head>
+
+<body>
+<div>
+ <img id="slide" style="width:70%"/>
+</div>
+
+<script>
+    var imgArray = [
+        'a.jpg',
+        'b.jpg',
+        'c.jpg',
+        'd.jpg',
+        'e.jpg',
+        'f.jpg',
+        'g.jpg',
+        'h.jpg',
+        'i.jpg',
+        'i.jpg',
+        'k.jpg',
+        'l.jpg',
+        'm.jpg'],
+        curIndex = 0;
+        imgDuration = 3000;
+
+    function slideShow() {
+        document.getElementById('slide').src = imgArray[curIndex];
+        curIndex++;
+        if (curIndex == imgArray.length) { 
+            curIndex = 0; 
+            }
+        setTimeout("slideShow()", imgDuration);
+    }
+    slideShow();
+</script>
+
+</body>
+</html>
